@@ -40,7 +40,7 @@ export default class Header extends Component {
         id="mainNav"
       >
         <div className="container">
-          <a className="navbar-brand" id="#page-top">
+          <a className="navbar-brand" id="#page-top" href="/">
             DS<sup>3</sup>
           </a>
           <button
