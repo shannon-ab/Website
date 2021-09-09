@@ -21,5 +21,21 @@ module.exports = {
     },
     'gatsby-plugin-sass',
     'gatsby-plugin-offline',
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        displayName: false,
+        pure: true,
+      },
+    },    
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Poppins\:200,300,400,500,600,700,800,900`,
+        ],
+        display: 'swap'
+      }
+    }
   ],
 };
