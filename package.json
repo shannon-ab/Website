@@ -1,14 +1,14 @@
 {
-  "name": "gatsby-starter-grayscale",
+  "name": "the-ds3-website",
   "version": "0.0.1",
-  "description": "Gatsby.js V2 starter template based on Grayscale by startbootstrap",
+  "description": "Website for the Data Science and Statistics Society",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anubhavsrivastava/gatsby-starter-grayscale.git"
+    "url": "git+https://github.com/theDS3/Website.git"
   },
   "author": {
-    "name": "Anubhav Srivastava",
-    "email": "anubhav.srivastava00@gmail.com"
+    "name": "theDS3",
+    "email": "thedatasciencecube@gmail.com"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.13.2",
@@ -42,14 +42,9 @@
     "prettier": "^2.4.1",
     "rimraf": "^3.0.2"
   },
-  "keywords": [
-    "gatsby",
-    "gatsby-starter",
-    "gatsby-starter-grayscale"
-  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/anubhavsrivastava/gatsby-starter-grayscale/issues"
+    "url": "https://github.com/theDS3/Website/issues"
   },
-  "homepage": "https://github.com/anubhavsrivastava/gatsby-starter-grayscale#readme"
+  "homepage": "https://github.com/theDS3/Website#readme"
 }
