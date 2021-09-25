@@ -9,7 +9,7 @@ export default class Header extends Component {
       visibilityClass: '',
     };
   }
-  toggleMenu = value => {
+  toggleMenu = (value) => {
     this.setState({ openMenu: value });
   };
   handleScroll = () => {
@@ -44,7 +44,7 @@ export default class Header extends Component {
             DS<sup>3</sup>
           </a>
           <button
-            onClick={_ => this.toggleMenu(!openMenu)}
+            onClick={(_) => this.toggleMenu(!openMenu)}
             className={`navbar-toggler navbar-toggler-right ${
               openMenu ? '' : 'collapsed'
             }`}
@@ -63,7 +63,7 @@ export default class Header extends Component {
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
                 <Scroll
-                  onClick={_ => this.toggleMenu(!openMenu)}
+                  onClick={(_) => this.toggleMenu(!openMenu)}
                   type="id"
                   element="home"
                 >
@@ -74,7 +74,7 @@ export default class Header extends Component {
               </li>
               <li className="nav-item">
                 <Scroll
-                  onClick={_ => this.toggleMenu(!openMenu)}
+                  onClick={(_) => this.toggleMenu(!openMenu)}
                   type="id"
                   element="about"
                 >
@@ -85,7 +85,7 @@ export default class Header extends Component {
               </li>
               <li className="nav-item">
                 <Scroll
-                  onClick={_ => this.toggleMenu(!openMenu)}
+                  onClick={(_) => this.toggleMenu(!openMenu)}
                   type="id"
                   element="events"
                 >
@@ -101,7 +101,7 @@ export default class Header extends Component {
               </li>
               <li className="nav-item">
                 <Scroll
-                  onClick={_ => this.toggleMenu(!openMenu)}
+                  onClick={(_) => this.toggleMenu(!openMenu)}
                   type="id"
                   element="contact"
                 >

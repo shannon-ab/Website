@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from "styled-components"
+import styled from 'styled-components';
 
 const StyledContainer = styled.div`
   display: flex;
@@ -30,7 +30,6 @@ const StyledTextContainer = styled.div`
 const StyledH3 = styled.h3`
   text-weight: bold;
   color: #17a2b8;
-
 `;
 
 export default class ContactItem extends Component {
@@ -47,4 +46,4 @@ export default class ContactItem extends Component {
       </StyledContainer>
     );
   }
-};
+}

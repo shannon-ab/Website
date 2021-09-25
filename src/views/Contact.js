@@ -1,10 +1,10 @@
 import React from 'react';
-import styled, {css, createGlobalStyle } from 'styled-components';
+import styled, { css, createGlobalStyle } from 'styled-components';
 
 import ContactItem from '../components/ContactItem';
 import config from '../../config';
 
-export const UniversalStyle = createGlobalStyle`
+export const ContactUniversalStyle = createGlobalStyle`
 *{
   margin: 0;
   padding: 0;
@@ -134,53 +134,68 @@ const StyledContactSubmit = styled.input`
 export default function ContactPage() {
   return (
     <>
-      <UniversalStyle />
+      <ContactUniversalStyle />
       <StyledContactSection id="contact">
-      <StyledContactH2>Contact us</StyledContactH2>
+        <StyledContactH2>Contact us</StyledContactH2>
 
-      <StyledContactInfoContainer className="container">
-        <StyledContactInfo>
-          {
-            config.contact.map(function(item, index) {
-              return <ContactItem key={index} 
-                                  title={item.title}
-                                  logoName={item.icon}
-                                  content={item.text}>            
-                      </ContactItem>
-            })
-          }
-        </StyledContactInfo>
+        <StyledContactInfoContainer className="container">
+          <StyledContactInfo>
+            {config.contact.map(function (item, index) {
+              return (
+                <ContactItem
+                  key={index}
+                  title={item.title}
+                  logoName={item.icon}
+                  content={item.text}
+                ></ContactItem>
+              );
+            })}
+          </StyledContactInfo>
 
-        <StyledContactFormContainer>
-          <form
-            method="post"
-            netlify-honeypot="bot-field"
-            data-netlify="true"
-            name="contact"
-          >
-            <StyledContactFormHeading>Send Message</StyledContactFormHeading>
-            <input type="hidden" name="form-name" value="contact" />
-            <input type="hidden" name="bot-field" />
-            <StyledContactInputBox>
-              <StyledContactInput type="text" name="name" required="required"></StyledContactInput>
-              <StyledContactSpan>Full name</StyledContactSpan>
-            </StyledContactInputBox>
-            <StyledContactInputBox>
-              <StyledContactInput type="text" name="email" required="required"></StyledContactInput>
-              <StyledContactSpan>Email</StyledContactSpan>
-            </StyledContactInputBox>
-            <StyledContactInputBox>
-              <StyledContactTextarea name="message" required="required"></StyledContactTextarea>
-              <StyledContactSpan>Type Message . . .</StyledContactSpan>
-            </StyledContactInputBox>
-            <StyledContactInputBox>
-              <StyledContactSubmit type="submit" name="" value="Send"></StyledContactSubmit>
-            </StyledContactInputBox>
-          </form>
-        </StyledContactFormContainer>
-      </StyledContactInfoContainer>
-    </StyledContactSection>
+          <StyledContactFormContainer>
+            <form
+              method="post"
+              netlify-honeypot="bot-field"
+              data-netlify="true"
+              name="contact"
+            >
+              <StyledContactFormHeading>Send Message</StyledContactFormHeading>
+              <input type="hidden" name="form-name" value="contact" />
+              <input type="hidden" name="bot-field" />
+              <StyledContactInputBox>
+                <StyledContactInput
+                  type="text"
+                  name="name"
+                  required="required"
+                ></StyledContactInput>
+                <StyledContactSpan>Full name</StyledContactSpan>
+              </StyledContactInputBox>
+              <StyledContactInputBox>
+                <StyledContactInput
+                  type="text"
+                  name="email"
+                  required="required"
+                ></StyledContactInput>
+                <StyledContactSpan>Email</StyledContactSpan>
+              </StyledContactInputBox>
+              <StyledContactInputBox>
+                <StyledContactTextarea
+                  name="message"
+                  required="required"
+                ></StyledContactTextarea>
+                <StyledContactSpan>Type Message . . .</StyledContactSpan>
+              </StyledContactInputBox>
+              <StyledContactInputBox>
+                <StyledContactSubmit
+                  type="submit"
+                  name=""
+                  value="Send"
+                ></StyledContactSubmit>
+              </StyledContactInputBox>
+            </form>
+          </StyledContactFormContainer>
+        </StyledContactInfoContainer>
+      </StyledContactSection>
     </>
-
   );
 }

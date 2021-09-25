@@ -35,7 +35,7 @@
     "deploy": "npm run clean && gatsby build --prefix-paths && gh-pages -d public",
     "serve": "gatsby serve",
     "clean": "rimraf .cache public",
-    "format": "prettier --write '**/*.js'",
+    "format": "prettier --write '**/*.{js,json}'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
