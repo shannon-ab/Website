@@ -1,117 +1,68 @@
 import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+
+import config from '../../config';
 
 import Layout from '../components/Layout';
+import Header from '../components/Header';
+import TeamCard from '../components/TeamCard';
 
-import p1 from '../assets/images/presidents/p1.webp';
-import p2 from '../assets/images/presidents/p2.webp';
-import p3 from '../assets/images/presidents/p3.webp';
-import p4 from '../assets/images/presidents/p4.webp';
-import p5 from '../assets/images/presidents/p5.webp';
-import p6 from '../assets/images/presidents/p6.webp';
-import p7 from '../assets/images/presidents/p7.webp';
+import unknown_person from '../assets/images/unknown_person.jpg';
 
-import p8 from '../assets/images/directors/d1.webp';
-import p9 from '../assets/images/directors/d2.webp';
-import p10 from '../assets/images/directors/d3.webp';
-import p11 from '../assets/images/directors/d4.webp';
+const TeamPage = () => {
+  const nodes = useStaticQuery(graphql`
+    {
+      allFile(
+        filter: { relativeDirectory: { ne: "" } }
+        sort: { fields: base }
+      ) {
+        nodes {
+          base
+          publicURL
+        }
+      }
+    }
+  `).allFile.nodes;
 
-import p12 from '../assets/images/social-design/s1.webp';
-import p13 from '../assets/images/social-design/s2.webp';
-
-import p14 from '../assets/images/associates/a1.webp';
-import p15 from '../assets/images/associates/a2.webp';
-import p16 from '../assets/images/associates/a3.webp';
-import p17 from '../assets/images/associates/a4.webp';
-import p18 from '../assets/images/associates/a5.webp';
-import p19 from '../assets/images/associates/a6.webp';
-import p20 from '../assets/images/associates/a7.webp';
-
-export default function Team() {
   return (
     <Layout>
-      <section id="team" className="team-section text-center">
+      <Header />
+      <section id="team" className="bg-white" style={{ paddingTop: '75px' }}>
         <div className="container">
-          <div className="row">
-            <div className="col-lg-8 mx-auto">
-              <br></br>
-              <h2 className="text-black mb-4 mt-10">Team</h2>
-
-              <div class="d-flex flex-row">
-                <div class="p-2">
-                  <img src={p1} className="img-fluid" alt="" />
-                </div>
-                <div class="p-2">
-                  <img src={p2} className="img-fluid" alt="" />
-                </div>
-                <div class="p-2">
-                  <img src={p3} className="img-fluid" alt="" />
-                </div>
-                <div class="p-2">
-                  <img src={p4} className="img-fluid" alt="" />
-                </div>
-              </div>
-              <div class="d-flex flex-row">
-                <div class="p-2">
-                  <img src={p5} className="img-fluid" alt="" />
-                </div>
-                <div class="p-2">
-                  <img src={p6} className="img-fluid" alt="" />
-                </div>
-                <div class="p-2">
-                  <img src={p7} className="img-fluid" alt="" />
-                </div>
-                <div class="p-2">
-                  <img src={p8} className="img-fluid" alt="" />
-                </div>
-              </div>
-              <div class="d-flex flex-row">
-                <div class="p-2">
-                  <img src={p9} className="img-fluid" alt="" />
-                </div>
-                <div class="p-2">
-                  <img src={p10} className="img-fluid" alt="" />
-                </div>
-                <div class="p-2">
-                  <img src={p11} className="img-fluid" alt="" />
-                </div>
-                <div class="p-2">
-                  <img src={p12} className="img-fluid" alt="" />
-                </div>
-              </div>
-
-              <div class="d-flex flex-row">
-                <div class="p-2">
-                  <img src={p13} className="img-fluid" alt="" />
-                </div>
-                <div class="p-2">
-                  <img src={p14} className="img-fluid" alt="" />
-                </div>
-                <div class="p-2">
-                  <img src={p15} className="img-fluid" alt="" />
-                </div>
-                <div class="p-2">
-                  <img src={p16} className="img-fluid" alt="" />
-                </div>
-              </div>
-              <div class="d-flex flex-row">
-                <div class="p-2">
-                  <img src={p17} className="img-fluid" alt="" />
-                </div>
-                <div class="p-2">
-                  <img src={p18} className="img-fluid" alt="" />
-                </div>
-                <div class="p-2">
-                  <img src={p19} className="img-fluid" alt="" />
-                </div>
-                <div class="p-2">
-                  <img src={p20} className="img-fluid" alt="" />
-                </div>
-              </div>
-            </div>
+          <div className="w-50 my-5 ml-4" style={{ fontSize: '16px' }}>
+            <h1
+              className="text-dark mr-5 mb-3"
+              style={{ fontSize: 'xxx-large' }}
+            >
+              {config.team.heading}
+            </h1>
+            <p className="text-muted">{config.team.subHeading}</p>
           </div>
-          <br></br>
+          {config.team.groups.map((group) => {
+            return (
+              <div className="ml-4">
+                <h2>{group.heading}</h2>
+                <div className="row">
+                  {group.members.map((member) => {
+                    const node = nodes.find(({ base }) => base === member.img);
+                    return (
+                      <TeamCard
+                        name={member.name}
+                        position={member.position}
+                        image={node ? node.publicURL : unknown_person}
+                        alt={member.alt}
+                        contact={member.contact}
+                      ></TeamCard>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
     </Layout>
   );
-}
+};
+
+export default TeamPage;

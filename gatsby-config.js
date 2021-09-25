@@ -27,15 +27,20 @@ module.exports = {
         displayName: false,
         pure: true,
       },
-    },    
+    },
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          `Poppins\:200,300,400,500,600,700,800,900`,
-        ],
-        display: 'swap'
-      }
-    }
+        fonts: [`Poppins\:200,300,400,500,600,700,800,900`],
+        display: 'swap',
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/assets/images`,
+      },
+    },
   ],
 };
