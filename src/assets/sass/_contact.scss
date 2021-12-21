@@ -1,36 +1,104 @@
 .contact-section {
-  padding: 5rem 0 0;
-  .card {
-    border: 0;
-    border-bottom: 0.25rem solid $primary;
-    h4 {
-      font-size: 0.8rem;
-      font-family: 'Varela Round';
-      text-transform: uppercase;
-      letter-spacing: 0.15rem;
+  padding: 50px 100px;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #343a40;
+
+  @media (max-width: 991px) {
+    padding: 50px;
+  }
+
+  h2 {
+    color: #f8f9fa;
+  }
+
+  .contact-section_info-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 3rem;
+
+    @media (max-width: 991px) {
+      flex-direction: column;
     }
-    hr {
-      border-color: $primary;
-      border-width: 0.25rem;
-      width: 3rem;
+
+    .contact-section_info {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      padding: 1rem;
+
+      @media (max-width: 991px) {
+        margin-bottom: 40px;
+        width: 100%;
+      }
     }
   }
-  .social {
-    margin-top: 5rem;
-    a {
-      text-align: center;
-      height: 3rem;
-      width: 3rem;
-      background: fade-out($white, 0.9);
-      border-radius: 100%;
-      line-height: 3rem;
-      color: fade-out($white, 0.7);
-      &:hover {
-        color: fade-out($white, 0.5);
+
+  .contact-section_form-container {
+    width: 40%;
+    padding: 40px;
+    background: #fff;
+
+    @media (max-width: 991px) {
+      width: 100%;
+    }
+
+    .contact-section_form-heading {
+      font-size: 30px;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .contact-section_input-box {
+      position: relative;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding-left: 5px 0;
+      font-size: 16px;
+      margin: 10px 0;
+      border: none;
+      border-bottom: 2px solid #333;
+      outline: none;
+      resize: none;
+
+      &:focus ~ span,
+      &:valid ~ span {
+        color: #e91e63;
+        font-size: 12px;
+        transform: translateY(-20px);
       }
-      &:active {
-        color: $white;
-      }
+    }
+
+    span {
+      position: absolute;
+      left: 0;
+      padding: 5px 0;
+      font-size: 16px;
+      margin: 10px 0;
+      pointer-events: none;
+      transition: 0.5s;
+      color: #666;
+    }
+
+    .contact-section_submit-input {
+      width: 100px;
+      background: #00bcd4;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      font-size: 18px;
     }
   }
 }

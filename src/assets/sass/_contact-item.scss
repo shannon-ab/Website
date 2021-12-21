@@ -1,0 +1,30 @@
+.contact-item {
+  display: flex;
+  position: relative;
+  padding: 20px 0;
+
+  .contact-item_icon {
+    min-width: 60px;
+    height: 60px;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #fff;
+  }
+
+  .contact-item_subtitle {
+    margin-left: 20px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: normal;
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      font-weight: bold;
+      color: #17a2b8;
+    }
+  }
+}
