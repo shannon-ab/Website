@@ -25,9 +25,10 @@ module.exports = {
       options: {
         fonts: [
           `Poppins\:200,300,400,500,600,700,800,900`,
+          `Varela Round\:400`,
         ],
-        display: 'swap'
-      }
-    }
+        display: 'swap',
+      },
+    },
   ],
 };
