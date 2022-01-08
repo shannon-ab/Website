@@ -20,7 +20,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-sass',
-    'gatsby-plugin-offline',    
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
