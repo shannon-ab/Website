@@ -1,0 +1,50 @@
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+
+@import './abstracts/variables.scss';
+@import './layout/navbar.scss';
+
+@import './pages/masthead.scss';
+@import './pages/about.scss';
+@import './pages/projects.scss';
+@import './pages/contact.scss';
+
+@import './components/buttons.scss';
+@import './components/contact-item.scss';
+
+@import './fontawesome/css/all.min.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  letter-spacing: 0.0625em;
+}
+
+a {
+  color: $primary;
+  &:focus,
+  &:hover {
+    text-decoration: none;
+    color: darken($primary, 20%);
+  }
+}
+
+.bg-black {
+  background-color: $black !important;
+}
+
+.bg-primary {
+  background-color: $primary !important;
+}
+
+.text-primary {
+  color: $primary !important;
+}
+
+footer {
+  padding: 5rem 0;
+}

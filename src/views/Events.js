@@ -45,7 +45,6 @@ export default function Events() {
                       <li>Event 3</li>
                     </ul>
                   </p>
-                  <hr className="d-none d-lg-block mb-0 ml-0" />
                 </div>
               </div>
             </div>
@@ -68,7 +67,6 @@ export default function Events() {
                         <li>Event 2</li>
                         <li>Event 3</li>
                       </ul>
-                      <hr className="d-none d-lg-block mb-0 mr-0 upcoming-underline" />
                     </div>
                   </p>
                 </div>

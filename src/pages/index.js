@@ -9,7 +9,7 @@ import Header from '../components/Header';
 
 import AboutPage from '../views/About';
 import ProjectPage from '../views/Events';
-import ContactPage from '../views/Contact/ContactPage';
+import Contact from '../views/Contact';
 
 const IndexPage = () => (
   <Layout>
@@ -35,7 +35,7 @@ const IndexPage = () => (
 
     <ProjectPage />
 
-    <ContactPage />
+    <Contact />
 
     <Footer />
   </Layout>
