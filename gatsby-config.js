@@ -1,4 +1,4 @@
-const config = require('./config');
+const config = require('./config/config');
 
 module.exports = {
   pathPrefix: config.pathPrefix,
@@ -28,6 +28,13 @@ module.exports = {
           `Varela Round\:400`,
         ],
         display: 'swap',
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/assets/images`,
       },
     },
   ],
