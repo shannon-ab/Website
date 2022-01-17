@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ContactItem from '../components/ContactItem';
-import config from '../../config';
+import config from '../../config/config'
 
 export default function ContactPage() {
   return (

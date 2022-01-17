@@ -3,7 +3,7 @@ import React from 'react';
 import Layout from '../components/Layout';
 import Scroll from '../components/Scroll';
 
-import config from '../../config';
+import config from '../../config/config'
 import Footer from '../views/Footer';
 import Header from '../components/Header';
 
